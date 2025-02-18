@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Result</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+
+    <h1>Let's eat...</h1>
+
+    <!-- 贏家選擇的食物 -->
+    <div class="winner-container">
+        <img id="winner-food" src="">
+    </div>
+
+    <!-- 按鈕區 -->
+    <div class="button-container">
+        <button id="play-again">Play Again</button>
+        <button id="leave">Leave</button>
+    </div>
+
+    <script>
+        const buttonSound = new Audio("button.mp3"); 
+        
+        // 從 localStorage 取得贏家的食物
+        const winnerFood = localStorage.getItem("winnerFood");
+        if (winnerFood) {
+            document.getElementById("winner-food").src = `${winnerFood}.png`;
+        }
+
+        // 重新開始遊戲
+        document.getElementById("play-again").addEventListener("click", () => {
+            localStorage.removeItem("winnerFood"); // 清除上次的勝利食物
+            window.location.href = "select.html"; // 重新導向選擇食物的頁面
+            buttonSound.currentTime = 0;
+            buttonSound.play();
+        });
+
+
+        // 離開遊戲，回到首頁
+        document.getElementById("leave").addEventListener("click", () => {
+            localStorage.removeItem("winnerFood");
+            window.location.href = "index.html";
+            buttonSound.currentTime = 0;
+            buttonSound.play();
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const winnerSound = new Audio("win.mp3"); // 播放彈出音效
+            winnerSound.play();
+        });
+
+
+        
+    </script>
+
+</body>
+</html>

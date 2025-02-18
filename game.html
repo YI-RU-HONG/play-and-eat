@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Super Tic Tac Toe</title>
+        <link rel = "stylesheet" href = "style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        
+        <audio id="bg-music" loop autoplay>
+            <source src="start.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- 玩家選擇區 -->
+        <div class="player-selection">
+            <div class="player-box" id="playerX">
+                <img id="playerX-img" src="">
+            </div>
+            <p class = "title2">or</p>
+            <div class="player-box" id="playerO">
+                <img id="playerO-img" src="">
+            </div>
+        </div>
+
+
+        <div id = "game-screen" class="hidden">
+            <div class="plate-bg"></div>
+            <div class="game-container">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+
+            </div>
+
+            <!-- <button id="reset">Restart</button> -->
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>

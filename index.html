@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Play and Eat</title>
+        <link rel = "stylesheet" href = "style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+        <audio id="bg-music" loop autoplay>
+            <source src="start2.mp3" type="audio/mpeg">
+        </audio>
+    </head>
+    <body>
+        
+        <div id="start-container">
+            <img src ="startlogo.png" id = "start-image" alt = "Super Tic Tac Toe">
+            <button id = "start-button" >START</button>
+        </div>
+
+
+        <script>
+            const buttonSound = new Audio("button.mp3"); 
+            document.getElementById("start-button").addEventListener("click", 
+            function(){window.location.href = "select.html";
+            buttonSound.currentTime = 0;
+            buttonSound.play();
+            }) ;
+            
+        </script>
+    </body>
+
+</html>
+

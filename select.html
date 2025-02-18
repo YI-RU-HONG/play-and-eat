@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+</head><link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+<body>
+    <audio id="bg-music" loop autoplay>
+        <source src="start2.mp3" type="audio/mpeg">
+    </audio>
+    <p class="title">What are your options?</p>
+    <div class="food-options">
+        <div class="food-item" data-food="sushi">
+            <img src="sushi.png" class="food">
+            <p class="choice-label"></p>
+        </div>
+        <div class="food-item" data-food="burger">
+            <img src="burger.png" class="food">
+            <p class="choice-label"></p>
+        </div>
+        <div class="food-item" data-food="ramen">
+            <img src="ramen.png" class="food">
+            <p class="choice-label"></p>
+        </div>
+        <div class="food-item" data-food="steak">
+            <img src="steak.png" class="food">
+            <p class="choice-label"></p>
+        </div>
+        <div class="food-item" data-food="pizza">
+            <img src="pizza.png" class="food">
+            <p class="choice-label"></p>
+        </div>
+        <div class="food-item" data-food="curry">
+            <img src="curry.png" class="food">
+            <p class="choice-label"></p>
+        </div>
+    </div>
+
+    <button id="confirm-selection" disabled>Let's play</button>
+
+    <script src="select.js"></script>
+
+</body>
+</html>

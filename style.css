@@ -1,0 +1,264 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #FBEFCB;
+}
+
+/* 開始畫面 */
+#start-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#start-image {
+    width: 411px;
+    height: auto;
+    margin-bottom: -50px; 
+    align-items: center;
+    justify-content: center;
+}
+
+/* 選擇框 */
+
+.title {
+    margin-top: 100px;
+    font-size: 28px;
+    font-family:'Bagel Fat One', cursive;
+    color:#804A4A
+
+}
+
+.food-options {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 50px
+}
+
+#confirm-selection {
+    width: 178px;
+    height: 51px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color:#5F3E19;
+    color: #FBEFCB;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.food-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* 預設圖片樣式 */
+.food {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    transition: border 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* 被選中的食物加邊框 */
+.selected {
+    border: 4px solid #D8C58A;
+}
+
+/* 選擇標籤 */
+.choice-label {
+    position:absolute;
+    top: -25px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #87743A;
+    /* background: rgba(255, 255, 255, 0.7); */
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+
+/* 遊戲九宮格 */
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    /* gap: 5px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-42%, -43%); /*讓九宮格與盤子中心對齊*/
+    width: 310px; /* 確保與盤子大小一致 */
+    height: 310px;
+}
+
+
+/* 格子樣式 */
+.cell {
+    width: 70%;
+    height: 70%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 1rem;
+
+    /* background-color: #eee; */
+    border:none;
+    cursor:pointer;
+}
+
+
+.cell img {
+    width: 60%;  /* 原來可能是 80%，改小一點 */
+    height: auto; /* 保持圖片比例 */
+}
+
+
+.cell:hover {
+    background-color: #3c2f231b;
+}
+
+button {
+    width: 178px;
+    height: 51px;
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color:#5F3E19;
+    color: #FBEFCB;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Protest Strike', cursive;
+    letter-spacing: 2px;
+}
+
+button:hover {
+    background-color: #4f2e0c;
+}
+
+button:active {
+    transform: scale(0.95); /* 點擊時稍微縮小 */
+    transition: transform 0.1s ease-in-out;
+}
+
+/* 玩家選擇區 */
+.player-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.player-box {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #eee; */
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.player-box img {
+    width: 70px;
+}
+
+.title2 {
+    font-size: 28px;
+    font-family:'Bagel Fat One', cursive;
+    color:#804A4A
+
+}
+
+.plate-bg {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background: url('plate.png') no-repeat center center;
+    background-size: 460px 460px;
+    background-position: 50% 5%;
+    z-index: -1; /* 讓盤子在最底層 */
+}
+
+/* #reset{
+    width: 178px;
+    height: 51px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color:#5F3E19;
+    color: #FBEFCB;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 500px;
+} */
+
+
+
+/*winner*/
+
+h1 {
+    font-family: 'Bagel Fat One', cursive;
+    font-size: 28px;
+    color:#804A4A;
+    text-align: center;
+    margin-top:100px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.winner-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top:30px;
+    gap: 5px;
+
+}
+
+@keyframes bounceOnce {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 贏家食物圖片動畫 */
+.winner-container img {
+    width: 300px;
+    border-radius:10px;
+    padding: 10px;
+    margin-top: 15px;
+    animation: bounceOnce 0.7s ease-out; /* 讓圖片彈跳 */
+}
+
+
